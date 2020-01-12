@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <!-- scripts -->
+    <script>
+      var fruit = function(name, shape, color, cost) {
+        this.name = name;
+        this.shape = shape;
+        this.color = color;
+        this.cost = cost;
+      };
+
+      // var f = new fruit("round", "red", "sweet");
+
+      // // alert(f.shape)
+      // // alert(f.color)
+      // // alert(f.taste)
+
+      var myflowers = [];
+
+      function myfunction() {
+        debugger;
+        var name = document.getElementById("name").value;
+        var shape = document.getElementById("shape").value;
+        var color = document.getElementById("color").value;
+        var cost = document.getElementById("cost").value;
+        var f = new fruit(name, shape, color, cost);
+        myflowers.push(f);
+      }
+
+      function myfunction1() {
+        for (var i = 0; myflowers.length; i++) {
+          document
+            .getElementById("para")
+            .insertAdjacentHTML(
+              "beforeend",
+              myflowers[i].name +
+                myflowers[i].shape +
+                myflowers[i].color +
+                myflowers[i].cost +
+                "<br>"
+            );
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div style="padding: 0;margin: 0;">
+      <h1>Enter fruit details</h1>
+      Name : <input type="text" id="name" placeholder="Enter name here" /><br />
+      Shape :
+      <input type="text" id="shape" placeholder="Enter Shape here" /><br />
+      Color :
+      <input type="text" id="color" placeholder="Enter Color here" /><br />
+      Cost : <input type="text" id="cost" placeholder="Enter Cost here" /><br />
+      <button onclick="myfunction()">Okay</button>
+      <button onclick="myfunction1()">Display</button>
+    </div>
+    <br />
+    <p id="para"></p>
+  </body>
+</html>
